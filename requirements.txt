@@ -1,0 +1,8 @@
+pandas
+pyyaml
+scikit-learn
+joblib
+transformers
+torch
+tqdm
+faiss-cpu   # optional, if it fails to install you can remove it

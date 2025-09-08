@@ -1,0 +1,11 @@
+# configs/config.yaml
+
+paths:
+  meddra: data/meddra.json
+  train: data/train.jsonl
+  dev: data/dev.jsonl
+  test: data/test_nolabels.jsonl
+  output: outputs/predictions.json
+
+backend: tfidf   # options: tfidf, biobert
+topk: 10
