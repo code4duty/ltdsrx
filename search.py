@@ -31,7 +31,6 @@ class TfidfBackend:
             best_by_cid[cid] = max(best_by_cid[cid], sims[i])
         return sorted(best_by_cid.items(), key=lambda x: x[1], reverse=True)[:topk]
 
-
 class BioBERTBackend:
     def __init__(self, meddra):
         from sentence_transformers import SentenceTransformer
@@ -62,4 +61,4 @@ class BioBERTBackend:
 def load_meddra(path):
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
-    return {str(cid): list(set(v)) for cid, v in data.items()}
+    return {str(cid): [t.lower() for t in v] for cid, v in data.items()}
